@@ -164,57 +164,15 @@ class GeneratorPage extends StatelessWidget {
   }
 }
 
-// ...
+class favoritespage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
     var appState = context.watch<MyAppState>();
-    var pair = appState.current;                 // ← Add this.
-      // ↓ Add this.
-    IconData icon;
-    if (appState.favorites.contains(pair)) {
-      icon = Icons.favorite;
-    } else {
-      icon = Icons.favorite_border;
-    }
-
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Text('A random AWESOME idea:'),
-            BigCard(pair: pair),
-            SizedBox(height: 10),
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                   ElevatedButton.icon(
-                  onPressed: () {
-                    appState.toggleFavorite();
-                  },
-                  icon: Icon(icon),
-                  label: Text('Like'),
-                ),
-                
-                SizedBox(width: 10),
-                
-                ElevatedButton(
-                  onPressed: () {
-                    appState.getNext(); 
-                    print('button pressed!');
-                  },
-                  child: Text('Next'),
-                
-                ),
-              ],
-            ),
-          ],
-          
-        ),
-      ),
-    );
+    var favorites = appState.favorites.toList();
+    throw UnimplementedError();
   }
-// ...
+}
 
 class BigCard extends StatelessWidget {
   const BigCard({
